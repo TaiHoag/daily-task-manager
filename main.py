@@ -475,7 +475,6 @@ class TaskManagerApp:
         self.schedule_daily_reset()  # Reschedule for the next day
 
 
-
 if __name__ == "__main__":
     root = ctk.CTk()
     app = TaskManagerApp(root)

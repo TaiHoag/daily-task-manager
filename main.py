@@ -2,7 +2,7 @@ import customtkinter as ctk
 import tkinter as tk
 from tkinter import messagebox
 import time
-import os
+import sys
 import datetime
 import threading
 import logging
@@ -81,6 +81,15 @@ class TaskManagerApp:
 
         # Schedule daily reset
         self.schedule_daily_reset()
+
+        # Closing handler
+        self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
+
+    def on_closing(self):
+        if messagebox.askokcancel("Quit", "Are you sure you want to quit?"):
+            logging.info("Application closed by user.")
+            self.root.destroy()
+            sys.exit()
 
     def open_task_window(self):
         self.task_window = ctk.CTkToplevel(self.root)
@@ -324,7 +333,10 @@ class TaskManagerApp:
         )
         self.remove_time_button.grid(row=0, column=1, padx=5)
 
-        threading.Thread(target=self.run_timer, args=(task_name,)).start()
+        timer_thread = threading.Thread(target=self.run_timer, args=(task_name,))
+        timer_thread.daemon = True
+        timer_thread.start()
+
         self.timer_window.protocol("WM_DELETE_WINDOW", self.on_timer_window_close)
 
         # Update database on task start/stop
@@ -468,7 +480,10 @@ class TaskManagerApp:
             reset_time += datetime.timedelta(days=1)
 
         delay = (reset_time - now).total_seconds()
-        threading.Timer(delay, self.perform_daily_reset).start()
+
+        daily_reset_thread = threading.Timer(delay, self.perform_daily_reset)
+        daily_reset_thread.daemon = True
+        daily_reset_thread.start()
 
     def perform_daily_reset(self):
         self.reset_task_times()

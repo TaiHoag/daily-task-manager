@@ -1,1 +1,22 @@
 2024-08-27 16:07:10,199 - INFO - Initialized Task Manager Application
+2024-08-29 19:37:17,881 - INFO - Initialized Task Manager Application
+2024-08-29 19:37:28,774 - INFO - Task 'Test1' created with min_time=60 and max_time=600.
+2024-08-29 19:37:37,940 - INFO - Task 'Test2' created with min_time=600 and max_time=6000.
+2024-08-29 19:37:42,802 - INFO - Task 'Test3' created with min_time=None and max_time=None.
+2024-08-29 19:37:48,700 - INFO - Task 'Test1' min_time=60 reached, set checkmark=True.
+2024-08-29 19:38:01,528 - INFO - Task 'Test2' min_time=600 reached, set checkmark=True.
+2024-08-29 19:44:57,296 - INFO - Initialized Task Manager Application
+2024-08-29 19:47:48,625 - INFO - Initialized Task Manager Application
+2024-08-29 19:48:38,535 - INFO - Initialized Task Manager Application
+2024-08-29 19:51:36,665 - INFO - Initialized Task Manager Application
+2024-08-29 19:51:39,494 - INFO - Application closed by user.
+2024-08-29 19:56:17,335 - INFO - Initialized Task Manager Application
+2024-08-29 19:56:21,623 - INFO - Application closed by user.
+2024-08-29 19:56:33,687 - INFO - Initialized Task Manager Application
+2024-08-29 19:56:36,714 - INFO - Application closed by user.
+2024-08-29 20:03:02,829 - INFO - Initialized Task Manager Application
+2024-08-29 20:03:06,222 - INFO - Application closed by user.
+2024-08-29 20:04:19,832 - INFO - Initialized Task Manager Application
+2024-08-29 20:04:22,426 - INFO - Application closed by user.
+2024-08-29 20:04:27,951 - INFO - Initialized Task Manager Application
+2024-08-29 20:04:33,283 - INFO - Application closed by user.
